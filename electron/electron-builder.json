@@ -1,0 +1,17 @@
+{
+  "appId": "com.smartide.app",
+  "productName": "SmartIDE",
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "**/*"
+  ],
+  "win": {
+    "target": "nsis"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}

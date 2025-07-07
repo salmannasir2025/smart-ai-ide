@@ -1,0 +1,35 @@
+SmartIDE-AIO-StarterPack/
+├── backend/
+│   ├── app.py                         # Main Flask app entry point, routes registration
+│   ├── requirements.txt               # Python dependencies (Flask, requests, python-dotenv, etc)
+│   ├── .env.example                   # Environment variable template for API keys and ports
+│   └── routes/
+│       ├── chat.py                   # Ollama & OpenAI chat API routes
+│       ├── bugfinder.py              # Bug detection API route using qwen2.5-coder model
+│       └── github.py                 # GitHub REST API routes with PAT authentication
+│
+├── frontend/
+│   ├── package.json                  # React + Tailwind + dependencies configuration
+│   ├── tailwind.config.js            # TailwindCSS configuration
+│   ├── public/
+│   │    ├── index.html               # Root HTML file
+│   └── src/
+│       ├── index.jsx                 # React app entry point
+│       ├── App.jsx                   # Main React component with routing and layout
+│       ├── components/
+│       │   ├── Editor.jsx            # Monaco Editor integration and code editor panel
+│       │   ├── ChatPanel.jsx         # Chat interface with model selector and conversation history
+│       │   ├── BugFinder.jsx         # Bug finder UI panel, sends code to backend for analysis
+│       │   └── GithubPanel.jsx       # GitHub authentication and repo/file browsing UI
+│       └── utils/
+│           └── api.js                # API calls to Flask backend (chat, bugfinder, GitHub)
+│
+├── electron/
+│   ├── main.js                      # Electron main process, creates app window and launches backend
+│   ├── preload.js                   # Preload scripts for security and IPC communication
+│   ├── package.json                 # Electron app dependencies and scripts
+│
+├── install-prereqs.ps1              # Windows PowerShell script to install Python, Node.js, deps
+├── install-prereqs.sh               # Linux Bash install script for dependencies
+├── README.md                       # Full project setup and usage instructions
+├── electron-builder.json           # Electron builder config for packaging app into installer

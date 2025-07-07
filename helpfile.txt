@@ -1,0 +1,48 @@
+Install prerequisites:
+
+On Windows, run PowerShell script:
+.\install-prereqs.ps1
+
+On Linux, run bash script:
+chmod +x install-prereqs.sh
+./install-prereqs.sh
+
+Create .env file in backend/ folder (copy .env.example):
+FLASK_PORT=5000
+OLLAMA_API_URL=http://localhost:11434
+OPENAI_API_KEY=your_openai_api_key_here
+GITHUB_PAT=your_github_personal_access_token_here
+
+Running the IDE in Development
+
+Start the backend Flask server:
+cd backend
+python app.py
+
+Start the frontend React app:
+cd frontend
+npm start
+
+In another terminal, start Electron app (loads frontend and backend):
+cd electron
+npm start
+
+
+Packaging Installer
+
+Inside electron folder, run:
+npm run package
+This will create a Windows .exe installer in the dist/ folder.
+
+Usage
+Use the Editor tab for code editing with Monaco Editor.
+Use Chat tab to chat with local Ollama models or OpenAI.
+Use Bug Finder tab to analyze your code for bugs using qwen2.5-coder model.
+Use GitHub tab to authenticate with your token, browse repos, and view files.
+
+Notes
+Ollama API must be running locally for LLM calls.
+OpenAI API key is required for OpenAI chat.
+GitHub PAT is required for GitHub features.
+Customize ports and URLs in .env.
+
